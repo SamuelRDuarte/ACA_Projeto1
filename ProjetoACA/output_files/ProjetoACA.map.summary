@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Thu Dec 03 20:39:47 2020
+Analysis & Synthesis Status : Successful - Fri Dec 04 16:26:31 2020
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : ProjetoACA
-Top-level Entity Name : encoderV1
+Top-level Entity Name : checkerV1
 Family : Cyclone IV GX
-Total logic elements : 18
-    Total combinational functions : 18
+Total logic elements : 20
+    Total combinational functions : 20
     Dedicated logic registers : 0
 Total registers : 0
-Total pins : 40
+Total pins : 25
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

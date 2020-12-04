@@ -1,0 +1,16 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+entity checkerV1 is
+	port(	a : in STD_LOGIC_VECTOR(23 downto 0);
+			error : out STD_LOGIC
+		);
+
+end checkerV1;
+
+
+ARCHITECTURE structure of checkerV1 is 
+Begin
+	component 
+	
+end structure;
