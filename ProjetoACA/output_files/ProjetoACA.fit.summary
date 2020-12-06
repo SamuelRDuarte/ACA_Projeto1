@@ -1,12 +1,12 @@
-Fitter Status : Successful - Fri Dec 04 16:26:39 2020
+Fitter Status : Successful - Sun Dec 06 21:15:34 2020
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : ProjetoACA
-Top-level Entity Name : checkerV1
+Top-level Entity Name : checkerV4
 Family : Cyclone IV GX
 Device : EP4CGX15BF14C6
 Timing Models : Final
-Total logic elements : 20 / 14,400 ( < 1 % )
-    Total combinational functions : 20 / 14,400 ( < 1 % )
+Total logic elements : 22 / 14,400 ( < 1 % )
+    Total combinational functions : 22 / 14,400 ( < 1 % )
     Dedicated logic registers : 0 / 14,400 ( 0 % )
 Total registers : 0
 Total pins : 25 / 81 ( 31 % )

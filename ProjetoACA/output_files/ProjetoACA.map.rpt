@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ProjetoACA
-Fri Dec 04 16:26:32 2020
+Sun Dec 06 21:15:29 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -43,13 +43,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Dec 04 16:26:31 2020       ;
+; Analysis & Synthesis Status        ; Successful - Sun Dec 06 21:15:29 2020       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; ProjetoACA                                  ;
-; Top-level Entity Name              ; checkerV1                                   ;
+; Top-level Entity Name              ; checkerV4                                   ;
 ; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 20                                          ;
-;     Total combinational functions  ; 20                                          ;
+; Total logic elements               ; 22                                          ;
+;     Total combinational functions  ; 22                                          ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
 ; Total pins                         ; 25                                          ;
@@ -69,7 +69,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
-; Top-level entity name                                            ; checkerV1          ; ProjetoACA         ;
+; Top-level entity name                                            ; checkerV4          ; ProjetoACA         ;
 ; Family name                                                      ; Cyclone IV GX      ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -170,9 +170,9 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                        ; Library ;
 +----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
-; decoderV1.vhd                    ; yes             ; User VHDL File  ; C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/decoderV1.vhd        ;         ;
 ; comparator_8bits.vhd             ; yes             ; User VHDL File  ; C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/comparator_8bits.vhd ;         ;
-; checkerV1.vhd                    ; yes             ; User VHDL File  ; C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/checkerV1.vhd        ;         ;
+; decoderV4.vhd                    ; yes             ; User VHDL File  ; C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/decoderV4.vhd        ;         ;
+; checkerV4.vhd                    ; yes             ; User VHDL File  ; C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/checkerV4.vhd        ;         ;
 +----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
 
 
@@ -185,9 +185,9 @@ https://fpgasoftware.intel.com/eula.
 ;                          ;                  ;
 ; DSP block 9-bit elements ; 0                ;
 ;                          ;                  ;
-; Maximum fan-out node     ; a_r[8]~input     ;
-; Maximum fan-out          ; 4                ;
-; Total fan-out            ; 104              ;
+; Maximum fan-out node     ; a_r[12]~input    ;
+; Maximum fan-out          ; 5                ;
+; Total fan-out            ; 107              ;
 ; Average fan-out          ; 1.49             ;
 +--------------------------+------------------+
 
@@ -197,8 +197,9 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name              ; Entity Name      ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------+------------------+--------------+
-; |checkerV1                 ; 20 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 25   ; 0            ; |checkerV1                       ; checkerV1        ; work         ;
-;    |comparator_8bits:comp| ; 20 (20)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |checkerV1|comparator_8bits:comp ; comparator_8bits ; work         ;
+; |checkerV4                 ; 22 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 25   ; 0            ; |checkerV4                       ; checkerV4        ; work         ;
+;    |comparator_8bits:comp| ; 15 (15)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |checkerV4|comparator_8bits:comp ; comparator_8bits ; work         ;
+;    |decoderV4:decoder|     ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |checkerV4|decoderV4:decoder     ; decoderV4        ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -224,13 +225,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 25                          ;
-; cycloneiii_lcell_comb ; 20                          ;
-;     normal            ; 20                          ;
+; cycloneiii_lcell_comb ; 22                          ;
+;     normal            ; 22                          ;
 ;         2 data inputs ; 1                           ;
-;         4 data inputs ; 19                          ;
+;         3 data inputs ; 5                           ;
+;         4 data inputs ; 16                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 3.68                        ;
+; Average LUT depth     ; 3.63                        ;
 +-----------------------+-----------------------------+
 
 
@@ -249,7 +251,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Fri Dec 04 16:26:16 2020
+    Info: Processing started: Sun Dec 06 21:15:19 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProjetoACA -c ProjetoACA
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -265,20 +267,47 @@ Info (12021): Found 2 design units, including 1 entities, in source file compara
 Info (12021): Found 2 design units, including 1 entities, in source file checkerv1.vhd
     Info (12022): Found design unit 1: checkerV1-structure File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/checkerV1.vhd Line: 12
     Info (12023): Found entity 1: checkerV1 File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/checkerV1.vhd Line: 4
-Info (12127): Elaborating entity "checkerV1" for the top level hierarchy
-Info (12129): Elaborating entity "decoderV1" using architecture "A:behavior" for hierarchy "decoderV1:decoder" File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/checkerV1.vhd Line: 16
-Info (12129): Elaborating entity "comparator_8bits" using architecture "A:behavior" for hierarchy "comparator_8bits:comp" File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/checkerV1.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file encoderv2.vhd
+    Info (12022): Found design unit 1: encoderV2-behavior File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/encoderV2.vhd Line: 12
+    Info (12023): Found entity 1: encoderV2 File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/encoderV2.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file encoderv3.vhd
+    Info (12022): Found design unit 1: encoderV3-behavior File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/encoderV3.vhd Line: 12
+    Info (12023): Found entity 1: encoderV3 File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/encoderV3.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file decoderv2.vhd
+    Info (12022): Found design unit 1: decoderV2-behavior File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/decoderV2.vhd Line: 12
+    Info (12023): Found entity 1: decoderV2 File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/decoderV2.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file checkerv2.vhd
+    Info (12022): Found design unit 1: checkerV2-structure File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/checkerV2.vhd Line: 12
+    Info (12023): Found entity 1: checkerV2 File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/checkerV2.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file decoderv3.vhd
+    Info (12022): Found design unit 1: decoderV3-behavior File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/decoderV3.vhd Line: 12
+    Info (12023): Found entity 1: decoderV3 File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/decoderV3.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file checkerv3.vhd
+    Info (12022): Found design unit 1: checkerV3-structure File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/checkerV3.vhd Line: 12
+    Info (12023): Found entity 1: checkerV3 File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/checkerV3.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file encoderv4.vhd
+    Info (12022): Found design unit 1: encoderV4-behavior File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/encoderV4.vhd Line: 12
+    Info (12023): Found entity 1: encoderV4 File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/encoderV4.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file decoderv4.vhd
+    Info (12022): Found design unit 1: decoderV4-behavior File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/decoderV4.vhd Line: 12
+    Info (12023): Found entity 1: decoderV4 File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/decoderV4.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file checkerv4.vhd
+    Info (12022): Found design unit 1: checkerV4-structure File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/checkerV4.vhd Line: 12
+    Info (12023): Found entity 1: checkerV4 File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/checkerV4.vhd Line: 4
+Info (12127): Elaborating entity "checkerV4" for the top level hierarchy
+Info (12129): Elaborating entity "decoderV4" using architecture "A:behavior" for hierarchy "decoderV4:decoder" File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/checkerV4.vhd Line: 16
+Info (12129): Elaborating entity "comparator_8bits" using architecture "A:behavior" for hierarchy "comparator_8bits:comp" File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/checkerV4.vhd Line: 20
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 45 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 47 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 24 input pins
     Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 20 logic cells
+    Info (21061): Implemented 22 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4850 megabytes
-    Info: Processing ended: Fri Dec 04 16:26:32 2020
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:35
+    Info: Peak virtual memory: 4848 megabytes
+    Info: Processing ended: Sun Dec 06 21:15:29 2020
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:25
 
 

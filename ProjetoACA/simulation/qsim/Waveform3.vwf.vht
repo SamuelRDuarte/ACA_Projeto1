@@ -19,9 +19,9 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "12/04/2020 15:54:27"
+-- Generated on "12/06/2020 19:46:09"
                                                              
--- Vhdl Test Bench(with test vectors) for design  :          decoderV1
+-- Vhdl Test Bench(with test vectors) for design  :          encoderV2
 -- 
 -- Simulation tool : 3rd Party
 -- 
@@ -29,25 +29,25 @@
 LIBRARY ieee;                                               
 USE ieee.std_logic_1164.all;                                
 
-ENTITY decoderV1_vhd_vec_tst IS
-END decoderV1_vhd_vec_tst;
-ARCHITECTURE decoderV1_arch OF decoderV1_vhd_vec_tst IS
+ENTITY encoderV2_vhd_vec_tst IS
+END encoderV2_vhd_vec_tst;
+ARCHITECTURE encoderV2_arch OF encoderV2_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
 SIGNAL a : STD_LOGIC_VECTOR(15 DOWNTO 0);
-SIGNAL resto : STD_LOGIC_VECTOR(7 DOWNTO 0);
-COMPONENT decoderV1
+SIGNAL r : STD_LOGIC_VECTOR(23 DOWNTO 0);
+COMPONENT encoderV2
 	PORT (
 	a : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-	resto : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+	r : OUT STD_LOGIC_VECTOR(23 DOWNTO 0)
 	);
 END COMPONENT;
 BEGIN
-	i1 : decoderV1
+	i1 : encoderV2
 	PORT MAP (
 -- list connections between master ports and signals
 	a => a,
-	resto => resto
+	r => r
 	);
 -- a[15]
 t_prcs_a_15: PROCESS
@@ -145,4 +145,4 @@ BEGIN
 	a(0) <= '0';
 WAIT;
 END PROCESS t_prcs_a_0;
-END decoderV1_arch;
+END encoderV2_arch;
