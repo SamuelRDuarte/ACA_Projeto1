@@ -19,9 +19,9 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "12/06/2020 21:17:40"
+-- Generated on "12/08/2020 17:18:59"
                                                              
--- Vhdl Test Bench(with test vectors) for design  :          checkerV4
+-- Vhdl Test Bench(with test vectors) for design  :          checkerV5
 -- 
 -- Simulation tool : 3rd Party
 -- 
@@ -29,21 +29,21 @@
 LIBRARY ieee;                                               
 USE ieee.std_logic_1164.all;                                
 
-ENTITY checkerV4_vhd_vec_tst IS
-END checkerV4_vhd_vec_tst;
-ARCHITECTURE checkerV4_arch OF checkerV4_vhd_vec_tst IS
+ENTITY checkerV5_vhd_vec_tst IS
+END checkerV5_vhd_vec_tst;
+ARCHITECTURE checkerV5_arch OF checkerV5_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
 SIGNAL a_r : STD_LOGIC_VECTOR(23 DOWNTO 0);
 SIGNAL error : STD_LOGIC;
-COMPONENT checkerV4
+COMPONENT checkerV5
 	PORT (
 	a_r : IN STD_LOGIC_VECTOR(23 DOWNTO 0);
-	error : OUT STD_LOGIC
+	error : BUFFER STD_LOGIC
 	);
 END COMPONENT;
 BEGIN
-	i1 : checkerV4
+	i1 : checkerV5
 	PORT MAP (
 -- list connections between master ports and signals
 	a_r => a_r,
@@ -193,4 +193,4 @@ BEGIN
 	a_r(0) <= '0';
 WAIT;
 END PROCESS t_prcs_a_r_0;
-END checkerV4_arch;
+END checkerV5_arch;

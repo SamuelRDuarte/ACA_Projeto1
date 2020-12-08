@@ -19,9 +19,9 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "12/06/2020 19:46:09"
+-- Generated on "12/08/2020 16:07:58"
                                                              
--- Vhdl Test Bench(with test vectors) for design  :          encoderV2
+-- Vhdl Test Bench(with test vectors) for design  :          decoderV5
 -- 
 -- Simulation tool : 3rd Party
 -- 
@@ -29,42 +29,42 @@
 LIBRARY ieee;                                               
 USE ieee.std_logic_1164.all;                                
 
-ENTITY encoderV2_vhd_vec_tst IS
-END encoderV2_vhd_vec_tst;
-ARCHITECTURE encoderV2_arch OF encoderV2_vhd_vec_tst IS
+ENTITY decoderV5_vhd_vec_tst IS
+END decoderV5_vhd_vec_tst;
+ARCHITECTURE decoderV5_arch OF decoderV5_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
 SIGNAL a : STD_LOGIC_VECTOR(15 DOWNTO 0);
-SIGNAL r : STD_LOGIC_VECTOR(23 DOWNTO 0);
-COMPONENT encoderV2
+SIGNAL resto : STD_LOGIC_VECTOR(7 DOWNTO 0);
+COMPONENT decoderV5
 	PORT (
 	a : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-	r : OUT STD_LOGIC_VECTOR(23 DOWNTO 0)
+	resto : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
 	);
 END COMPONENT;
 BEGIN
-	i1 : encoderV2
+	i1 : decoderV5
 	PORT MAP (
 -- list connections between master ports and signals
 	a => a,
-	r => r
+	resto => resto
 	);
 -- a[15]
 t_prcs_a_15: PROCESS
 BEGIN
-	a(15) <= '1';
+	a(15) <= '0';
 WAIT;
 END PROCESS t_prcs_a_15;
 -- a[14]
 t_prcs_a_14: PROCESS
 BEGIN
-	a(14) <= '0';
+	a(14) <= '1';
 WAIT;
 END PROCESS t_prcs_a_14;
 -- a[13]
 t_prcs_a_13: PROCESS
 BEGIN
-	a(13) <= '0';
+	a(13) <= '1';
 WAIT;
 END PROCESS t_prcs_a_13;
 -- a[12]
@@ -136,7 +136,7 @@ END PROCESS t_prcs_a_2;
 -- a[1]
 t_prcs_a_1: PROCESS
 BEGIN
-	a(1) <= '0';
+	a(1) <= '1';
 WAIT;
 END PROCESS t_prcs_a_1;
 -- a[0]
@@ -145,4 +145,4 @@ BEGIN
 	a(0) <= '0';
 WAIT;
 END PROCESS t_prcs_a_0;
-END encoderV2_arch;
+END decoderV5_arch;

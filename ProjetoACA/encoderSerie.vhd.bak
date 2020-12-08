@@ -1,0 +1,46 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+entity encoderSerie is
+		port(a : in std_logic,
+				clk : in std_logic,
+				nGRst : in std_logic,
+				output : out std_logic);
+end encoderSerie;
+
+
+ARCHITECTURE behavior of encoderSerie is
+	signal shitfRegister : std_logic_vector(7 downto 0) := (others => '0');
+	signal count : unsigned(5 downto 0) := (others => '0');
+	
+	begin
+	process(clk)
+	begin
+		if(nGRst = '0') then
+			count <= (others => '0');
+			shitfRegister <= (others => '0');
+		elsif(rising_edge(clk)) then
+			if(count < 16) then
+				shitfRegister(5) <= shitfRegister(4) xor shitfRegister(7);
+				shitfRegister(3) <= shitfRegister(2) xor shitfRegister(7);
+				shitfRegister(2) <= shitfRegister(1) xor shitfRegister(7);
+				shitfRegister(1) <= shitfRegister(0) xor shitfRegister(7);
+				shitfRegister(0) <= shitfRegister(7) xor a;
+				shitfRegister(4) <= shitfRegister(3)
+				shitfRegister(7 downto 6) <= shitfRegister(6 downto 5);
+				output <= a;
+			end if;
+			if(count > 15 and count < 24) then
+				shitfRegister(5) <= shitfRegister(4) xor shitfRegister(7);
+				shitfRegister(3) <= shitfRegister(2) xor shitfRegister(7);
+				shitfRegister(2) <= shitfRegister(1) xor shitfRegister(7);
+				shitfRegister(1) <= shitfRegister(0) xor shitfRegister(7);
+				shitfRegister(0) <= shitfRegister(7) xor '0';
+				shitfRegister(4) <= shitfRegister(3)
+				shitfRegister(7 downto 6) <= shitfRegister(6 downto 5);
+				output <= shitfRegister(7);
+			end if;
+			count <= count + 1
+		end if;
+	end process;
+end behavior;

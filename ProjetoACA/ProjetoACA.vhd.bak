@@ -1,0 +1,9 @@
+ENTITY gateXor2 IS
+  PORT (x0, x1,: IN STD_LOGIC;
+        y: OUT STD_LOGIC);
+END gateOr8;
+
+ARCHITECTURE logicFunction OF gateOr8 IS
+BEGIN
+  y <= (not( x1 and x2)) and (x1 or x2)
+END logicFunction;
