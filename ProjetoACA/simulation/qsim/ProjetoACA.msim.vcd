@@ -3,7 +3,7 @@ $comment
 		vcd file ProjetoACA.msim.vcd -direction
 $end
 $date
-	Sun Dec 06 21:17:43 2020
+	Tue Dec 08 17:19:02 2020
 $end
 $version
 	ModelSim Version 2020.1
@@ -12,7 +12,7 @@ $timescale
 	1ps
 $end
 
-$scope module checkerv4_vhd_vec_tst $end
+$scope module checkerv5_vhd_vec_tst $end
 $var wire 1 ! a_r [23] $end
 $var wire 1 " a_r [22] $end
 $var wire 1 # a_r [21] $end
@@ -75,52 +75,51 @@ $var wire 1 Y ww_a_r [1] $end
 $var wire 1 Z ww_a_r [0] $end
 $var wire 1 [ ww_error $end
 $var wire 1 \ \error~output_o\ $end
-$var wire 1 ] \a_r[1]~input_o\ $end
-$var wire 1 ^ \a_r[13]~input_o\ $end
-$var wire 1 _ \a_r[14]~input_o\ $end
-$var wire 1 ` \a_r[15]~input_o\ $end
-$var wire 1 a \decoder|a5to7~0_combout\ $end
-$var wire 1 b \a_r[21]~input_o\ $end
-$var wire 1 c \a_r[12]~input_o\ $end
-$var wire 1 d \a_r[9]~input_o\ $end
-$var wire 1 e \decoder|a1_4_13~0_combout\ $end
-$var wire 1 f \a_r[8]~input_o\ $end
-$var wire 1 g \a_r[11]~input_o\ $end
-$var wire 1 h \a_r[23]~input_o\ $end
-$var wire 1 i \decoder|a0_3_15~combout\ $end
-$var wire 1 j \comp|e1~0_combout\ $end
-$var wire 1 k \a_r[19]~input_o\ $end
-$var wire 1 l \a_r[17]~input_o\ $end
-$var wire 1 m \a_r[18]~input_o\ $end
-$var wire 1 n \decoder|a9_10~combout\ $end
-$var wire 1 o \a_r[16]~input_o\ $end
-$var wire 1 p \decoder|a7to11~combout\ $end
-$var wire 1 q \a_r[7]~input_o\ $end
-$var wire 1 r \a_r[22]~input_o\ $end
-$var wire 1 s \a_r[10]~input_o\ $end
-$var wire 1 t \comp|e7~0_combout\ $end
-$var wire 1 u \comp|error~1_combout\ $end
-$var wire 1 v \a_r[4]~input_o\ $end
-$var wire 1 w \decoder|a1_3_9_10~0_combout\ $end
-$var wire 1 x \comp|e2~0_combout\ $end
-$var wire 1 y \comp|e4~combout\ $end
-$var wire 1 z \a_r[20]~input_o\ $end
-$var wire 1 { \a_r[2]~input_o\ $end
-$var wire 1 | \comp|e2~1_combout\ $end
-$var wire 1 } \comp|e2~2_combout\ $end
-$var wire 1 ~ \a_r[0]~input_o\ $end
-$var wire 1 !! \comp|e0~0_combout\ $end
-$var wire 1 "! \comp|error~0_combout\ $end
-$var wire 1 #! \a_r[6]~input_o\ $end
-$var wire 1 $! \comp|e6~0_combout\ $end
-$var wire 1 %! \comp|e6~1_combout\ $end
-$var wire 1 &! \a_r[5]~input_o\ $end
-$var wire 1 '! \comp|e5~0_combout\ $end
-$var wire 1 (! \a_r[3]~input_o\ $end
-$var wire 1 )! \comp|e3~0_combout\ $end
-$var wire 1 *! \decoder|a0_2_8_9~0_combout\ $end
-$var wire 1 +! \comp|error~2_combout\ $end
-$var wire 1 ,! \comp|error~combout\ $end
+$var wire 1 ] \a_r[22]~input_o\ $end
+$var wire 1 ^ \a_r[12]~input_o\ $end
+$var wire 1 _ \a_r[9]~input_o\ $end
+$var wire 1 ` \a_r[3]~input_o\ $end
+$var wire 1 a \comp|xor3|y~0_combout\ $end
+$var wire 1 b \a_r[15]~input_o\ $end
+$var wire 1 c \a_r[16]~input_o\ $end
+$var wire 1 d \a_r[8]~input_o\ $end
+$var wire 1 e \a_r[10]~input_o\ $end
+$var wire 1 f \a_r[17]~input_o\ $end
+$var wire 1 g \decoder|xor17|y~0_combout\ $end
+$var wire 1 h \a_r[20]~input_o\ $end
+$var wire 1 i \a_r[13]~input_o\ $end
+$var wire 1 j \a_r[5]~input_o\ $end
+$var wire 1 k \a_r[14]~input_o\ $end
+$var wire 1 l \comp|xor5|y~0_combout\ $end
+$var wire 1 m \comp|xor5|y~1_combout\ $end
+$var wire 1 n \a_r[23]~input_o\ $end
+$var wire 1 o \a_r[11]~input_o\ $end
+$var wire 1 p \comp|xor0|y~0_combout\ $end
+$var wire 1 q \a_r[1]~input_o\ $end
+$var wire 1 r \comp|xor1|y~0_combout\ $end
+$var wire 1 s \comp|xor1|y~1_combout\ $end
+$var wire 1 t \comp|or8|y~1_combout\ $end
+$var wire 1 u \comp|xor7|y~0_combout\ $end
+$var wire 1 v \a_r[18]~input_o\ $end
+$var wire 1 w \decoder|xor5|y~0_combout\ $end
+$var wire 1 x \a_r[19]~input_o\ $end
+$var wire 1 y \a_r[7]~input_o\ $end
+$var wire 1 z \comp|xor7|y~1_combout\ $end
+$var wire 1 { \a_r[21]~input_o\ $end
+$var wire 1 | \decoder|xor11|y~0_combout\ $end
+$var wire 1 } \comp|xor6|y~0_combout\ $end
+$var wire 1 ~ \a_r[6]~input_o\ $end
+$var wire 1 !! \comp|xor6|y~1_combout\ $end
+$var wire 1 "! \a_r[0]~input_o\ $end
+$var wire 1 #! \comp|xor0|y~1_combout\ $end
+$var wire 1 $! \comp|xor0|y~2_combout\ $end
+$var wire 1 %! \a_r[4]~input_o\ $end
+$var wire 1 &! \comp|xor4|y~0_combout\ $end
+$var wire 1 '! \comp|or8|y~0_combout\ $end
+$var wire 1 (! \a_r[2]~input_o\ $end
+$var wire 1 )! \comp|xor2|y~0_combout\ $end
+$var wire 1 *! \comp|xor2|y~1_combout\ $end
+$var wire 1 +! \comp|or8|y~combout\ $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
@@ -140,50 +139,49 @@ x<
 1\
 0]
 0^
-1_
-0`
+0_
+1`
 1a
 0b
-0c
+1c
 0d
 0e
 0f
-0g
+1g
 0h
 0i
-1j
+0j
 1k
-0l
-1m
-1n
-1o
-1p
+1l
+0m
+0n
+0o
+0p
 0q
 0r
-0s
+1s
 1t
 1u
 1v
-1w
+0w
 1x
 0y
 0z
 0{
 1|
 0}
-0~
+1~
 0!!
-1"!
-1#!
-0$!
-0%!
-0&!
+0"!
+0#!
+1$!
+1%!
+1&!
 1'!
-1(!
+0(!
 1)!
 1*!
-0+!
-1,!
+1+!
 0!
 0"
 0#

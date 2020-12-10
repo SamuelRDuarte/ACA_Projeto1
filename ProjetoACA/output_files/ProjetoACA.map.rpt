@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ProjetoACA
-Sun Dec 06 21:15:29 2020
+Tue Dec 08 17:12:49 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -43,13 +43,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Dec 06 21:15:29 2020       ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec 08 17:12:49 2020       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; ProjetoACA                                  ;
-; Top-level Entity Name              ; checkerV4                                   ;
+; Top-level Entity Name              ; checkerV5                                   ;
 ; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 22                                          ;
-;     Total combinational functions  ; 22                                          ;
+; Total logic elements               ; 21                                          ;
+;     Total combinational functions  ; 21                                          ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
 ; Total pins                         ; 25                                          ;
@@ -69,7 +69,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
-; Top-level entity name                                            ; checkerV4          ; ProjetoACA         ;
+; Top-level entity name                                            ; checkerv5          ; ProjetoACA         ;
 ; Family name                                                      ; Cyclone IV GX      ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -154,8 +154,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -165,15 +165,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                               ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                        ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
-; comparator_8bits.vhd             ; yes             ; User VHDL File  ; C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/comparator_8bits.vhd ;         ;
-; decoderV4.vhd                    ; yes             ; User VHDL File  ; C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/decoderV4.vhd        ;         ;
-; checkerV4.vhd                    ; yes             ; User VHDL File  ; C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/checkerV4.vhd        ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                     ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                              ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------+---------+
+; gateXor2.vhd                     ; yes             ; User VHDL File  ; C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/gateXor2.vhd         ;         ;
+; comparator_8bits.vhd             ; yes             ; User VHDL File  ; C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/comparator_8bits.vhd ;         ;
+; decoderV5.vhd                    ; yes             ; User VHDL File  ; C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/decoderV5.vhd        ;         ;
+; checkerv5.vhd                    ; yes             ; User VHDL File  ; C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/checkerv5.vhd        ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------+
@@ -185,22 +186,34 @@ https://fpgasoftware.intel.com/eula.
 ;                          ;                  ;
 ; DSP block 9-bit elements ; 0                ;
 ;                          ;                  ;
-; Maximum fan-out node     ; a_r[12]~input    ;
-; Maximum fan-out          ; 5                ;
-; Total fan-out            ; 107              ;
-; Average fan-out          ; 1.49             ;
+; Maximum fan-out node     ; a_r[15]~input    ;
+; Maximum fan-out          ; 4                ;
+; Total fan-out            ; 108              ;
+; Average fan-out          ; 1.52             ;
 +--------------------------+------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------+------------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name              ; Entity Name      ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------+------------------+--------------+
-; |checkerV4                 ; 22 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 25   ; 0            ; |checkerV4                       ; checkerV4        ; work         ;
-;    |comparator_8bits:comp| ; 15 (15)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |checkerV4|comparator_8bits:comp ; comparator_8bits ; work         ;
-;    |decoderV4:decoder|     ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |checkerV4|decoderV4:decoder     ; decoderV4        ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------+------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                  ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+------------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                            ; Entity Name      ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+------------------------------------------------+------------------+--------------+
+; |checkerV5                 ; 21 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 25   ; 0            ; |checkerV5                                     ; checkerV5        ; work         ;
+;    |comparator_8bits:comp| ; 18 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |checkerV5|comparator_8bits:comp               ; comparator_8bits ; work         ;
+;       |gateOr8:or8|        ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |checkerV5|comparator_8bits:comp|gateOr8:or8   ; gateOr8          ; work         ;
+;       |gateXor2:xor0|      ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |checkerV5|comparator_8bits:comp|gateXor2:xor0 ; gateXor2         ; work         ;
+;       |gateXor2:xor1|      ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |checkerV5|comparator_8bits:comp|gateXor2:xor1 ; gateXor2         ; work         ;
+;       |gateXor2:xor2|      ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |checkerV5|comparator_8bits:comp|gateXor2:xor2 ; gateXor2         ; work         ;
+;       |gateXor2:xor3|      ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |checkerV5|comparator_8bits:comp|gateXor2:xor3 ; gateXor2         ; work         ;
+;       |gateXor2:xor4|      ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |checkerV5|comparator_8bits:comp|gateXor2:xor4 ; gateXor2         ; work         ;
+;       |gateXor2:xor5|      ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |checkerV5|comparator_8bits:comp|gateXor2:xor5 ; gateXor2         ; work         ;
+;       |gateXor2:xor6|      ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |checkerV5|comparator_8bits:comp|gateXor2:xor6 ; gateXor2         ; work         ;
+;       |gateXor2:xor7|      ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |checkerV5|comparator_8bits:comp|gateXor2:xor7 ; gateXor2         ; work         ;
+;    |decoderV5:decoder|     ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |checkerV5|decoderV5:decoder                   ; decoderV5        ; work         ;
+;       |gateXor2:xor11|     ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |checkerV5|decoderV5:decoder|gateXor2:xor11    ; gateXor2         ; work         ;
+;       |gateXor2:xor17|     ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |checkerV5|decoderV5:decoder|gateXor2:xor17    ; gateXor2         ; work         ;
+;       |gateXor2:xor5|      ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |checkerV5|decoderV5:decoder|gateXor2:xor5     ; gateXor2         ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+------------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -225,14 +238,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 25                          ;
-; cycloneiii_lcell_comb ; 22                          ;
-;     normal            ; 22                          ;
+; cycloneiii_lcell_comb ; 21                          ;
+;     normal            ; 21                          ;
 ;         2 data inputs ; 1                           ;
-;         3 data inputs ; 5                           ;
-;         4 data inputs ; 16                          ;
+;         4 data inputs ; 20                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 3.63                        ;
+; Average LUT depth     ; 3.69                        ;
 +-----------------------+-----------------------------+
 
 
@@ -251,63 +263,86 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sun Dec 06 21:15:19 2020
+    Info: Processing started: Tue Dec 08 17:12:36 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProjetoACA -c ProjetoACA
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file gatexor2.vhd
+    Info (12022): Found design unit 1: gateXor2-logicFunction File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/gateXor2.vhd Line: 10
+    Info (12023): Found entity 1: gateXor2 File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/gateXor2.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file encoderv4_desenho.bdf
+    Info (12023): Found entity 1: encoderV4_Desenho
+Info (12021): Found 1 design units, including 1 entities, in source file encoderv3_desenho.bdf
+    Info (12023): Found entity 1: encoderV3_Desenho
 Info (12021): Found 2 design units, including 1 entities, in source file encoderv1.vhd
-    Info (12022): Found design unit 1: encoderV1-behavior File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/encoderV1.vhd Line: 12
-    Info (12023): Found entity 1: encoderV1 File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/encoderV1.vhd Line: 4
+    Info (12022): Found design unit 1: encoderV1-behavior File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/encoderV1.vhd Line: 12
+    Info (12023): Found entity 1: encoderV1 File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/encoderV1.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file decoderv1.vhd
-    Info (12022): Found design unit 1: decoderV1-behavior File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/decoderV1.vhd Line: 12
-    Info (12023): Found entity 1: decoderV1 File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/decoderV1.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file comparator_8bits.vhd
-    Info (12022): Found design unit 1: comparator_8bits-behavior File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/comparator_8bits.vhd Line: 13
-    Info (12023): Found entity 1: comparator_8bits File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/comparator_8bits.vhd Line: 4
+    Info (12022): Found design unit 1: decoderV1-behavior File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/decoderV1.vhd Line: 12
+    Info (12023): Found entity 1: decoderV1 File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/decoderV1.vhd Line: 4
+Info (12021): Found 4 design units, including 2 entities, in source file comparator_8bits.vhd
+    Info (12022): Found design unit 1: gateOr8-logicFunction File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/comparator_8bits.vhd Line: 9
+    Info (12022): Found design unit 2: comparator_8bits-behavior File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/comparator_8bits.vhd Line: 26
+    Info (12023): Found entity 1: gateOr8 File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/comparator_8bits.vhd Line: 4
+    Info (12023): Found entity 2: comparator_8bits File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/comparator_8bits.vhd Line: 17
 Info (12021): Found 2 design units, including 1 entities, in source file checkerv1.vhd
-    Info (12022): Found design unit 1: checkerV1-structure File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/checkerV1.vhd Line: 12
-    Info (12023): Found entity 1: checkerV1 File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/checkerV1.vhd Line: 4
+    Info (12022): Found design unit 1: checkerV1-structure File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/checkerV1.vhd Line: 12
+    Info (12023): Found entity 1: checkerV1 File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/checkerV1.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file encoderv2.vhd
-    Info (12022): Found design unit 1: encoderV2-behavior File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/encoderV2.vhd Line: 12
-    Info (12023): Found entity 1: encoderV2 File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/encoderV2.vhd Line: 4
+    Info (12022): Found design unit 1: encoderV2-behavior File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/encoderV2.vhd Line: 12
+    Info (12023): Found entity 1: encoderV2 File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/encoderV2.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file encoderv3.vhd
-    Info (12022): Found design unit 1: encoderV3-behavior File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/encoderV3.vhd Line: 12
-    Info (12023): Found entity 1: encoderV3 File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/encoderV3.vhd Line: 4
+    Info (12022): Found design unit 1: encoderV3-behavior File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/encoderV3.vhd Line: 12
+    Info (12023): Found entity 1: encoderV3 File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/encoderV3.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file decoderv2.vhd
-    Info (12022): Found design unit 1: decoderV2-behavior File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/decoderV2.vhd Line: 12
-    Info (12023): Found entity 1: decoderV2 File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/decoderV2.vhd Line: 4
+    Info (12022): Found design unit 1: decoderV2-behavior File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/decoderV2.vhd Line: 12
+    Info (12023): Found entity 1: decoderV2 File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/decoderV2.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file checkerv2.vhd
-    Info (12022): Found design unit 1: checkerV2-structure File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/checkerV2.vhd Line: 12
-    Info (12023): Found entity 1: checkerV2 File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/checkerV2.vhd Line: 4
+    Info (12022): Found design unit 1: checkerV2-structure File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/checkerV2.vhd Line: 12
+    Info (12023): Found entity 1: checkerV2 File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/checkerV2.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file decoderv3.vhd
-    Info (12022): Found design unit 1: decoderV3-behavior File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/decoderV3.vhd Line: 12
-    Info (12023): Found entity 1: decoderV3 File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/decoderV3.vhd Line: 4
+    Info (12022): Found design unit 1: decoderV3-behavior File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/decoderV3.vhd Line: 12
+    Info (12023): Found entity 1: decoderV3 File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/decoderV3.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file checkerv3.vhd
-    Info (12022): Found design unit 1: checkerV3-structure File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/checkerV3.vhd Line: 12
-    Info (12023): Found entity 1: checkerV3 File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/checkerV3.vhd Line: 4
+    Info (12022): Found design unit 1: checkerV3-structure File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/checkerV3.vhd Line: 12
+    Info (12023): Found entity 1: checkerV3 File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/checkerV3.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file encoderv4.vhd
-    Info (12022): Found design unit 1: encoderV4-behavior File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/encoderV4.vhd Line: 12
-    Info (12023): Found entity 1: encoderV4 File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/encoderV4.vhd Line: 4
+    Info (12022): Found design unit 1: encoderV4-behavior File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/encoderV4.vhd Line: 12
+    Info (12023): Found entity 1: encoderV4 File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/encoderV4.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file decoderv4.vhd
-    Info (12022): Found design unit 1: decoderV4-behavior File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/decoderV4.vhd Line: 12
-    Info (12023): Found entity 1: decoderV4 File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/decoderV4.vhd Line: 4
+    Info (12022): Found design unit 1: decoderV4-behavior File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/decoderV4.vhd Line: 12
+    Info (12023): Found entity 1: decoderV4 File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/decoderV4.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file checkerv4.vhd
-    Info (12022): Found design unit 1: checkerV4-structure File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/checkerV4.vhd Line: 12
-    Info (12023): Found entity 1: checkerV4 File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/checkerV4.vhd Line: 4
-Info (12127): Elaborating entity "checkerV4" for the top level hierarchy
-Info (12129): Elaborating entity "decoderV4" using architecture "A:behavior" for hierarchy "decoderV4:decoder" File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/checkerV4.vhd Line: 16
-Info (12129): Elaborating entity "comparator_8bits" using architecture "A:behavior" for hierarchy "comparator_8bits:comp" File: C:/Users/pedra/Desktop/ACA_Projeto1/ProjetoACA/checkerV4.vhd Line: 20
+    Info (12022): Found design unit 1: checkerV4-structure File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/checkerV4.vhd Line: 12
+    Info (12023): Found entity 1: checkerV4 File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/checkerV4.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file encoderserie.vhd
+    Info (12022): Found design unit 1: encoderSerie-behavior File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/encoderSerie.vhd Line: 14
+    Info (12023): Found entity 1: encoderSerie File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/encoderSerie.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file encoderv5.vhd
+    Info (12022): Found design unit 1: encoderV5-behavior File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/encoderV5.vhd Line: 11
+    Info (12023): Found entity 1: encoderV5 File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/encoderV5.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file decoderv5.vhd
+    Info (12022): Found design unit 1: decoderV5-behavior File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/decoderV5.vhd Line: 11
+    Info (12023): Found entity 1: decoderV5 File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/decoderV5.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file checkerv5.vhd
+    Info (12022): Found design unit 1: checkerV5-structure File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/checkerv5.vhd Line: 12
+    Info (12023): Found entity 1: checkerV5 File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/checkerv5.vhd Line: 4
+Info (12127): Elaborating entity "checkerv5" for the top level hierarchy
+Info (12129): Elaborating entity "decoderV5" using architecture "A:behavior" for hierarchy "decoderV5:decoder" File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/checkerv5.vhd Line: 16
+Info (12128): Elaborating entity "gateXor2" for hierarchy "decoderV5:decoder|gateXor2:xor0" File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/decoderV5.vhd Line: 62
+Info (12129): Elaborating entity "comparator_8bits" using architecture "A:behavior" for hierarchy "comparator_8bits:comp" File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/checkerv5.vhd Line: 20
+Info (12128): Elaborating entity "gateOr8" for hierarchy "comparator_8bits:comp|gateOr8:or8" File: C:/Users/samue/OneDrive/Ambiente de Trabalho/ACA_Projeto1/ProjetoACA/comparator_8bits.vhd Line: 58
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 47 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 46 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 24 input pins
     Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 22 logic cells
+    Info (21061): Implemented 21 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4848 megabytes
-    Info: Processing ended: Sun Dec 06 21:15:29 2020
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:25
+    Info: Peak virtual memory: 4860 megabytes
+    Info: Processing ended: Tue Dec 08 17:12:49 2020
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:28
 
 

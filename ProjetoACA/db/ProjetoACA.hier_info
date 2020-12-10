@@ -1,4 +1,4 @@
-|checkerV4
+|checkerv5
 a_r[0] => comparator_8bits:comp.b[0]
 a_r[1] => comparator_8bits:comp.b[1]
 a_r[2] => comparator_8bits:comp.b[2]
@@ -7,86 +7,458 @@ a_r[4] => comparator_8bits:comp.b[4]
 a_r[5] => comparator_8bits:comp.b[5]
 a_r[6] => comparator_8bits:comp.b[6]
 a_r[7] => comparator_8bits:comp.b[7]
-a_r[8] => decoderv4:decoder.a[0]
-a_r[9] => decoderv4:decoder.a[1]
-a_r[10] => decoderv4:decoder.a[2]
-a_r[11] => decoderv4:decoder.a[3]
-a_r[12] => decoderv4:decoder.a[4]
-a_r[13] => decoderv4:decoder.a[5]
-a_r[14] => decoderv4:decoder.a[6]
-a_r[15] => decoderv4:decoder.a[7]
-a_r[16] => decoderv4:decoder.a[8]
-a_r[17] => decoderv4:decoder.a[9]
-a_r[18] => decoderv4:decoder.a[10]
-a_r[19] => decoderv4:decoder.a[11]
-a_r[20] => decoderv4:decoder.a[12]
-a_r[21] => decoderv4:decoder.a[13]
-a_r[22] => decoderv4:decoder.a[14]
-a_r[23] => decoderv4:decoder.a[15]
-error <= comparator_8bits:comp.error
+a_r[8] => decoderv5:decoder.a[0]
+a_r[9] => decoderv5:decoder.a[1]
+a_r[10] => decoderv5:decoder.a[2]
+a_r[11] => decoderv5:decoder.a[3]
+a_r[12] => decoderv5:decoder.a[4]
+a_r[13] => decoderv5:decoder.a[5]
+a_r[14] => decoderv5:decoder.a[6]
+a_r[15] => decoderv5:decoder.a[7]
+a_r[16] => decoderv5:decoder.a[8]
+a_r[17] => decoderv5:decoder.a[9]
+a_r[18] => decoderv5:decoder.a[10]
+a_r[19] => decoderv5:decoder.a[11]
+a_r[20] => decoderv5:decoder.a[12]
+a_r[21] => decoderv5:decoder.a[13]
+a_r[22] => decoderv5:decoder.a[14]
+a_r[23] => decoderv5:decoder.a[15]
+error << comparator_8bits:comp.error
 
 
-|checkerV4|decoderV4:decoder
-a[0] => a0_15.IN0
-a[0] => a0_2_8_9.IN0
-a[1] => a1_4_13.IN0
-a[1] => a1_3_9_10.IN0
-a[2] => a2_14.IN0
-a[2] => a0_2_8_9.IN1
-a[3] => a0_3_15.IN1
-a[3] => a1_3_9_10.IN1
-a[4] => a1_4_13.IN1
-a[4] => a4_6.IN0
-a[4] => resto.IN1
-a[5] => a5to7.IN0
-a[5] => resto.IN1
-a[5] => resto.IN1
-a[6] => a5to7.IN1
-a[6] => a4_6.IN1
-a[7] => a7to11.IN0
-a[7] => a5to7.IN1
-a[8] => a7to11.IN1
-a[8] => a0_2_8_9.IN1
-a[8] => resto.IN1
-a[9] => a9_10.IN0
-a[9] => a0_2_8_9.IN1
-a[10] => a9_10.IN1
-a[11] => a7to11.IN1
-a[11] => resto.IN1
-a[12] => resto.IN1
-a[12] => resto.IN1
-a[12] => resto.IN1
-a[13] => a1_4_13.IN1
-a[13] => resto.IN1
-a[14] => a2_14.IN1
-a[15] => a0_15.IN1
-resto[0] <= resto.DB_MAX_OUTPUT_PORT_TYPE
-resto[1] <= resto.DB_MAX_OUTPUT_PORT_TYPE
-resto[2] <= resto.DB_MAX_OUTPUT_PORT_TYPE
-resto[3] <= resto.DB_MAX_OUTPUT_PORT_TYPE
-resto[4] <= resto.DB_MAX_OUTPUT_PORT_TYPE
-resto[5] <= resto.DB_MAX_OUTPUT_PORT_TYPE
-resto[6] <= resto.DB_MAX_OUTPUT_PORT_TYPE
-resto[7] <= resto.DB_MAX_OUTPUT_PORT_TYPE
+|checkerv5|decoderV5:decoder
+a[0] => gateXor2:xor0.x0
+a[0] => gateXor2:xor15.x0
+a[1] => gateXor2:xor6.x0
+a[1] => gateXor2:xor10.x0
+a[2] => gateXor2:xor12.x0
+a[2] => gateXor2:xor15.x1
+a[3] => gateXor2:xor1.x1
+a[3] => gateXor2:xor10.x1
+a[4] => gateXor2:xor6.x1
+a[4] => gateXor2:xor13.x0
+a[4] => gateXor2:xor30.x0
+a[5] => gateXor2:xor8.x0
+a[5] => gateXor2:xor18.x0
+a[5] => gateXor2:xor28.x1
+a[6] => gateXor2:xor8.x1
+a[6] => gateXor2:xor13.x1
+a[7] => gateXor2:xor2.x0
+a[7] => gateXor2:xor9.x1
+a[8] => gateXor2:xor2.x1
+a[8] => gateXor2:xor16.x0
+a[8] => gateXor2:xor33.x0
+a[9] => gateXor2:xor3.x0
+a[9] => gateXor2:xor16.x1
+a[10] => gateXor2:xor3.x1
+a[11] => gateXor2:xor5.x1
+a[11] => gateXor2:xor23.x0
+a[12] => gateXor2:xor18.x1
+a[12] => gateXor2:xor23.x1
+a[12] => gateXor2:xor30.x1
+a[13] => gateXor2:xor33.x1
+a[14] => gateXor2:xor7.x1
+a[14] => gateXor2:xor12.x1
+a[15] => gateXor2:xor0.x1
+resto[0] <= gateXor2:xor20.y
+resto[1] <= gateXor2:xor22.y
+resto[2] <= gateXor2:xor26.y
+resto[3] <= gateXor2:xor27.y
+resto[4] <= gateXor2:xor29.y
+resto[5] <= gateXor2:xor32.y
+resto[6] <= gateXor2:xor35.y
+resto[7] <= gateXor2:xor36.y
 
 
-|checkerV4|comparator_8bits:comp
-a[0] => e0.IN0
-a[1] => e1.IN0
-a[2] => e2.IN0
-a[3] => e3.IN0
-a[4] => e4.IN0
-a[5] => e5.IN0
-a[6] => e6.IN0
-a[7] => e7.IN0
-b[0] => e0.IN1
-b[1] => e1.IN1
-b[2] => e2.IN1
-b[3] => e3.IN1
-b[4] => e4.IN1
-b[5] => e5.IN1
-b[6] => e6.IN1
-b[7] => e7.IN1
-error <= error.DB_MAX_OUTPUT_PORT_TYPE
+|checkerv5|decoderV5:decoder|gateXor2:xor0
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor1
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor2
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor3
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor4
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor5
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor6
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor7
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor8
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor9
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor10
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor11
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor12
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor13
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor14
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor15
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor16
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor17
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor18
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor19
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor20
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor21
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor22
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor23
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor24
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor25
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor26
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor27
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor28
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor29
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor30
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor31
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor32
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor33
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor34
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor35
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|decoderV5:decoder|gateXor2:xor36
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|comparator_8bits:comp
+a[0] => gateXor2:xor0.x0
+a[1] => gateXor2:xor1.x0
+a[2] => gateXor2:xor2.x0
+a[3] => gateXor2:xor3.x0
+a[4] => gateXor2:xor4.x0
+a[5] => gateXor2:xor5.x0
+a[6] => gateXor2:xor6.x0
+a[7] => gateXor2:xor7.x0
+b[0] => gateXor2:xor0.x1
+b[1] => gateXor2:xor1.x1
+b[2] => gateXor2:xor2.x1
+b[3] => gateXor2:xor3.x1
+b[4] => gateXor2:xor4.x1
+b[5] => gateXor2:xor5.x1
+b[6] => gateXor2:xor6.x1
+b[7] => gateXor2:xor7.x1
+error <= gateOr8:or8.y
+
+
+|checkerv5|comparator_8bits:comp|gateXor2:xor0
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|comparator_8bits:comp|gateXor2:xor1
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|comparator_8bits:comp|gateXor2:xor2
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|comparator_8bits:comp|gateXor2:xor3
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|comparator_8bits:comp|gateXor2:xor4
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|comparator_8bits:comp|gateXor2:xor5
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|comparator_8bits:comp|gateXor2:xor6
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|comparator_8bits:comp|gateXor2:xor7
+x0 => y.IN0
+x0 => y.IN0
+x1 => y.IN1
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|checkerv5|comparator_8bits:comp|gateOr8:or8
+x0 => y.IN0
+x1 => y.IN1
+x2 => y.IN1
+x3 => y.IN1
+x4 => y.IN1
+x5 => y.IN1
+x6 => y.IN1
+x7 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
